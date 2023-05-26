@@ -1,1 +1,2 @@
 # dotFiles_ArchSway
+ -nvim
