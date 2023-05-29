@@ -1,2 +1,3 @@
 # dotFiles_ArchSway
- -nvim
+
+My arch Linux setup Interface files and others :)
