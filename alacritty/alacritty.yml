@@ -5,11 +5,13 @@ window:
   class:
     instance: Alacritty
     general: Alacritty
-  opacity: 0.9
+  opacity: 0.65
 scrolling:
   history: 10000
   multiplier: 3
 
+colors:
+  foreground: '#9b59b6'
 
 
 # Configuration for Alacritty, the GPU enhanced terminal emulator.

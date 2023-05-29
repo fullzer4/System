@@ -1,18 +1,9 @@
 require('base')
-require('highlights')
-require('maps')
 require('plugins')
 
-local has = function(x)
-  return vim.fn.has(x) == 1
-end
-
-local is_mac = has "macunix"
-local is_win = has "win32"
-
-if is_mac then
-  require('macos')
-end
-if is_win then
-  require('windows')
-end
+vim.cmd('highlight Normal guibg=NONE ctermbg=NONE')
+vim.cmd('highlight NonText guibg=NONE ctermbg=NONE')
+vim.cmd('highlight SignColumn guibg=NONE ctermbg=NONE')
+vim.cmd('highlight VertSplit guibg=NONE ctermbg=NONE')
+vim.cmd('highlight FoldColumn guibg=NONE ctermbg=NONE')
+vim.cmd('highlight EndOfBuffer guibg=NONE ctermbg=NONE')
