@@ -5,7 +5,19 @@ lsp.preset("recommended")
 lsp.ensure_installed({
   'tsserver',
   'rust_analyzer',
+  'html',
+  'cssls',
+  'scssls',
+  'reactls',
+  'eslint',
+  'pyright',
+  'vls',
+  'tailwindcss',
+  'clangd',
+  'dockerls',
+  'graphql',
 })
+
 
 -- Fix Undefined global 'vim'
 lsp.nvim_workspace()
