@@ -43,16 +43,27 @@ Then after connectiong just exit
 ```
 
 in the options i prefer to use this settings for my enviromment:
-
+<br>
 In 'Drivers': is use ext4 format without /home partition
+<br>
 In 'Swap': False
+<br>
 In 'Root password': None
-In 'Profile': 
+<br>
+In 'Profile':
+<br>
   desktop
+<br>  
   sway
+<br>  
   polkit
+<br>  
   ( chose your device )
+<br>
 In 'Kernels': linux-zen
+<br>
 In 'Additional packages': firefox git
+<br>
 In 'Network configuration': Use NetworkManager
+<br>
 In 'Optional repositories': multilib
