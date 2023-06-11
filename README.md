@@ -42,7 +42,7 @@ Then after connectiong just exit
   archinstall
 ```
 
-in the options i prefer to use this settings for my enviromment:
+### In the options i prefer to use this settings for my enviromment:
 <br>
 In 'Drivers': is use ext4 format without /home partition
 <br>
