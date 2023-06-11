@@ -22,11 +22,18 @@ To setup our network we need to do this steps
 ```
 
 ```bash
-  
+  device list
 ```
 
+Replace wlan0 and WifiNetwork for your parameters
+
 ```bash
-  
+  station wlan0 connect WifiNetwork
+```
+Then after connectiong just exit
+
+```bash
+  exit
 ```
 
 3 - after connecting to a network we are going to install your arch linux with archinstall
@@ -37,3 +44,15 @@ To setup our network we need to do this steps
 
 in the options i prefer to use this settings for my enviromment:
 
+In 'Drivers': is use ext4 format without /home partition
+In 'Swap': False
+In 'Root password': None
+In 'Profile': 
+  desktop
+  sway
+  polkit
+  ( chose your device )
+In 'Kernels': linux-zen
+In 'Additional packages': firefox git
+In 'Network configuration': Use NetworkManager
+In 'Optional repositories': multilib
