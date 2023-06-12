@@ -18,7 +18,6 @@ lsp.ensure_installed({
   'graphql',
 })
 
-
 -- Fix Undefined global 'vim'
 lsp.nvim_workspace()
 

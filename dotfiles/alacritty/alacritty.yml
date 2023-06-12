@@ -13,6 +13,10 @@ scrolling:
 colors:
   foreground: '#9b59b6'
 
+font:
+  normal:
+    family: "JetBrainsMono Nerd Font"
+    style: Regular
 
 # Configuration for Alacritty, the GPU enhanced terminal emulator.
 

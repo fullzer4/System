@@ -40,6 +40,8 @@ floating_modifier $mod normal
 
 bindsym $mod+Shift+c reload
 
+bindsym Print exec grim -g "$(slurp)" ~/screenshot-$(date +%Y-%m-%d-%H%M%S).png
+
 bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
 bindsym $mod+$left focus left
 bindsym $mod+$down focus down
@@ -49,7 +51,6 @@ bindsym $mod+Left focus left
 bindsym $mod+Down focus down
 bindsym $mod+Up focus up
 bindsym $mod+Right focus right
-
 bindsym $mod+Shift+$left move left
 bindsym $mod+Shift+$down move down
 bindsym $mod+Shift+$up move up

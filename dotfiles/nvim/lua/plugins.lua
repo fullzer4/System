@@ -19,7 +19,6 @@ packer.startup(function(use)
 
   use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
   use('nvim-treesitter/playground')
-  use('theprimeagen/harpoon')
   use('mbbill/undotree')
   use('tpope/vim-fugitive') 
   use {
@@ -43,6 +42,10 @@ packer.startup(function(use)
 		  {'L3MON4D3/LuaSnip'},
 		  {'rafamadriz/friendly-snippets'},
 	  }
+  }
+  use {
+    'kyazdani42/nvim-tree.lua',
+    requires = "kyazdani42/nvim-web-devicons"
   }
 end)
 
