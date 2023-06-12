@@ -1,21 +1,21 @@
 # dotFiles_ArchSway
 
-My arch Linux setup Interface, files and others :)
+My Arch Linux setup interface, files, and more! :)
 
 <img src="./imgs/screenshot-2023-05-29-033143.png">
 
 ## Incial setup
 
-1 - Make a flash pendrive with arch-iso file ( recommended to use: rufus / balena-etcher )
-2 - After doing the bootable pendrive for the arch instalattion lets use the archinstall command to simplify your lifes
+1 - Create a bootable USB flash drive with the Arch ISO file (recommended tools: Rufus / balenaEtcher).
+2 - Once you have the bootable USB drive ready, use the archinstall command to simplify your life during installation.
 
 ### Desktop:
 
-if you are in a desktop enviromment with cable network you dont need to setup wifi etc... just skip to the next step
+If you are using a desktop environment with a wired network connection, you don't need to set up Wi-Fi, etc. Just skip to the next step.
 
 ### Notebook:
 
-To setup our network we need to do this steps
+To set up our network, follow these steps:
 
 ```bash
   iwctl 
@@ -25,24 +25,24 @@ To setup our network we need to do this steps
   device list
 ```
 
-Replace wlan0 and WifiNetwork for your parameters
+Replace "wlan0" and "WifiNetwork" with your specific parameters.
 
 ```bash
   station wlan0 connect WifiNetwork
 ```
-Then after connectiong just exit
+After connecting, simply exit:
 
 ```bash
   exit
 ```
 
-3 - after connecting to a network we are going to install your arch linux with archinstall
+3 - After connecting to a network, we will install Arch Linux using archinstall:
 
 ```bash
   archinstall
 ```
 
-### In the options i prefer to use this settings for my enviromment:
+### Preferred settings for my environment in the options:
 
 In 'Drivers': is use ext4 format without /home partition
 
