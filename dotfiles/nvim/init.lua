@@ -7,7 +7,7 @@ vim.g.loaded_netrwPlugin = 1
 vim.opt.termguicolors = true
 
 require("nvim-tree").setup()
-
+vim.g.nvim_tree_hide_dotfiles = 0
 require("nvim-tree").setup({
   sort_by = "case_sensitive",
   view = {
@@ -17,7 +17,7 @@ require("nvim-tree").setup({
     group_empty = true,
   },
   filters = {
-    dotfiles = true,
+    dotfiles = false,
   },
 })
 

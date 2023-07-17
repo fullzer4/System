@@ -16,6 +16,7 @@ lsp.ensure_installed({
   'clangd',
   'dockerls',
   'graphql',
+  'jdtls'
 })
 
 -- Fix Undefined global 'vim'

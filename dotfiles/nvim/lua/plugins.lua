@@ -47,6 +47,9 @@ packer.startup(function(use)
     'kyazdani42/nvim-tree.lua',
     requires = "kyazdani42/nvim-web-devicons"
   }
+  use {"akinsho/toggleterm.nvim", tag = '*', config = function()
+    require("toggleterm").setup()
+  end}
 end)
 
 vim.cmd('colorscheme dracula')
