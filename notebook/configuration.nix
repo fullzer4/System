@@ -97,6 +97,7 @@
 
   environment.systemPackages = with pkgs; [
      hyprland
+     swww
      eww
      dunst
      libnotify
@@ -107,9 +108,11 @@
      firefox
      chromium
      android-studio
+     obsidian
 
      git
 
+     vscode
      neovim
      vim
 
@@ -123,6 +126,9 @@
      nodejs_20
      nodejs_18
 
+     gccgo13
+     poco
+     boost
      cmake
      clang-tools
      cppcheck
