@@ -9,19 +9,22 @@
 )
 
 (defwidget workspaces0 []
-   (box :class "workspaces0"
-      :orientation "h"
-      :space-evenly true
-      :halign "start"
-      (button
-         :class ""
-         workspace0	 
+   (eventbox :onscroll "bash ~/.config/eww/scripts/changeactiveworkspace.sh {} ${current_workspace}" :class "workspaces-widget"
+    (box :space-evenly true
+      (label :text "${workspace0}${current_workspace}" :visible false)
+         (for workspace in workspace0
+            (eventbox :onclick "hyprctl dispatch workspace ${workspace.id}"
+               (box :class "workspace-entry ${workspace.id == current_workspace ? "current" : ""} ${workspace.windows > 0 ? "occupied" : "empty"}"
+                  (label :text "${workspace.id}")
+               )
+            )
+         )
       )
    )
 )
 
-(defpoll workspace0 :interval "1s"
-  "scripts/getworkspaces.sh HDMI-A-1")
+(deflisten current_workspace :initial "1" "bash ~/.config/eww/scripts/getactiveworkspace.sh")
+(deflisten workspace0 :initial "[]" "bash ~/.config/eww/scripts/getworkspaces.sh HDMI-A-1")
 
 (defwidget clock []
    (box :class "clock"
