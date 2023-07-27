@@ -8,13 +8,22 @@
    )
 )
 
+(defwidget bar1 []
+   (box :class "bar"
+      (centerbox :orientation "v"
+         (workspaces1)
+	 (workspaces1)
+	 (workspaces1)
+      )
+   )
+)
+
 (defwidget workspaces0 []
    (eventbox :onscroll "bash ~/.config/eww/scripts/changeactiveworkspace.sh {} ${current_workspace}" :class "workspaces-widget"
-    (box :space-evenly true
-      (label :text "${workspace0}${current_workspace}" :visible false)
+      (box :space-evenly true
          (for workspace in workspace0
             (eventbox :onclick "hyprctl dispatch workspace ${workspace.id}"
-               (box :class "workspace-entry ${workspace.id == current_workspace ? "current" : ""} ${workspace.windows > 0 ? "occupied" : "empty"}"
+               (box :class "workspace-entry"
                   (label :text "${workspace.id}")
                )
             )
@@ -23,8 +32,23 @@
    )
 )
 
+(defwidget workspaces1 []
+   (eventbox :onscroll "bash ~/.config/eww/scripts/changeactiveworkspace.sh {} ${current_workspace}" :class "workspaces-widget"
+      (box :space-evenly true
+         (for workspace in workspace1
+	    (eventbox :onclick "hyprctl dispatch workspace ${workspace.id}"
+	       (box :class "workspace-entry"
+	          (label :text "${workspace.id}")
+	       )
+	    )
+	 )
+      )
+   )
+)
+
 (deflisten current_workspace :initial "1" "bash ~/.config/eww/scripts/getactiveworkspace.sh")
 (deflisten workspace0 :initial "[]" "bash ~/.config/eww/scripts/getworkspaces.sh HDMI-A-1")
+(deflisten workspace1 :initial "[]" "bash ~/.config/eww/scripts/getworkspaces.sh DVI-D-1")
 
 (defwidget clock []
    (box :class "clock"
@@ -74,4 +98,4 @@
 	   :reserve (struts :distance "40px" :side "left")
 	   :windowtype "dock"
 	   :wm-ignore false
-"a")
+(bar1))
