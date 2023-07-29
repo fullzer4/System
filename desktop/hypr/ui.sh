@@ -1,1 +1,2 @@
-eww open mainbar
+eww open mainbar &
+eww open sidebar

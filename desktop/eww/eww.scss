@@ -1,0 +1,35 @@
+.mainbar {
+   background: transparent;
+   
+   .bar {
+      .clock {
+	 .button {
+            background: transparent;
+	    border: none;
+	    outline: none;
+            box-shadow: none;
+	    color: #eee;
+	    font-size: 15px;
+         }
+	 .button:hover {
+            border-bottom: 1px solid #1a2c50;
+	 }
+      }
+
+      .workspaces {
+         color: #FFFFFF;
+	 font-size: 15px;
+	 .workspaceNumbers {
+	 }
+	 .Numbers:hover {
+            border-bottom: 1px solid #1a2c50;
+	 }
+      }
+
+   }
+}
+
+.sidebar {
+   background: transparent;
+   border: none;
+}

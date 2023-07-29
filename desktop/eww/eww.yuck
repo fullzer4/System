@@ -19,11 +19,15 @@
 )
 
 (defwidget workspaces0 []
-   (eventbox :onscroll "bash ~/.config/eww/scripts/changeactiveworkspace.sh {} ${current_workspace}" :class "workspaces-widget"
-      (box :space-evenly true
+   (eventbox :onscroll "bash ~/.config/eww/scripts/changeactiveworkspace.sh {} ${current_workspace}" :class "workspaces"
+      (box :class ""
+         :space-evenly false
+	 :spacing 15
          (for workspace in workspace0
             (eventbox :onclick "hyprctl dispatch workspace ${workspace.id}"
-               (box :class "workspace-entry"
+	       :class "Numbers"
+	       :width 20
+               (box :class "workspaceNumbers"
                   (label :text "${workspace.id}")
                )
             )
@@ -56,7 +60,7 @@
       :space-evenly false
       :halign "center"
       (button
-         :class ""
+         :class "button"
          :onclick "scripts/calendar.sh show"
          date-time
       )
@@ -75,10 +79,11 @@
 (defwindow mainbar
            :monitor 0
 	   :exclusive true
+	   :class "mainbar"
 	   :geometry (geometry :x "0%"
-	                       :y "0%"
-			       :width "100%"
-			       :height "45px"
+	                       :y "1%"
+			       :width "95%"
+			       :height "10px"
 			       :anchor "center top")
 	   :stacking "fg"
 	   :reserve (struts :distance "40px" :side "top")
@@ -89,6 +94,7 @@
 (defwindow sidebar
            :monitor 1
 	   :exclusive true
+	   :class "sidebar"
 	   :geometry (geometry :x "0%"
 	                       :y "0%"
 			       :width "45px"
