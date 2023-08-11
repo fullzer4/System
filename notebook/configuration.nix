@@ -129,6 +129,10 @@ in
   home-manager.users.fullzer4 = { config, pkgs, ... } : {
     home.stateVersion = "23.05";
 
+    #imports = [
+    #  "/etc/nixos/code/git.nix"
+    #];
+
     home.file.".ssh/allowed_signers".text =
     "* ${builtins.readFile /home/fullzer4/.ssh/id_rsa.pub}";
 
