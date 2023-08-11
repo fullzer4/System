@@ -60,6 +60,7 @@ in
      eww
      
      firefox
+     chromium
      obsidian
      discord
 
@@ -67,6 +68,26 @@ in
      wget
 
      git
+     python312
+     nodejs_20
+     deno
+     rustc
+     rustup
+     rustfmt
+     gnat13
+     gccgo13
+     clang-tools
+     gnumake
+     cmake
+     ninja
+     gdb
+     clang-tools
+     cppcheck
+
+     docker
+     docker-compose
+     podman
+     podman-compose
   ];
 
   programs.mtr.enable = true;
@@ -85,11 +106,17 @@ in
   # networking.firewall.allowedUDPPorts = [ ... ];
   networking.firewall.enable = false;
 
+  programs.hyprland = {
+    enable = true;
+    xwayland.enable = true;
+  };
+  
+  environment.sessionVariables = {
+    
+  };
+
   home-manager.users.fullzer4 = { config, pkgs, ... } : {
     home.stateVersion = "23.05";
-    home.packages = [
-      pkgs.hyprland
-    ];
 
     home.file.".ssh/allowed_signers".text =
     "* ${builtins.readFile /home/fullzer4/.ssh/id_rsa.pub}";
