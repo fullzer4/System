@@ -11,14 +11,18 @@
      pavucontrol
      dunst
      libnotify
-     
+     neofetch
 
      firefox
      chromium
      obsidian
      discord
-
+     
+     zsh
+     oh-my-zsh
+     spaceship-prompt
      vim
+     vscode
      wget
 
      git

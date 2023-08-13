@@ -45,11 +45,14 @@ in
     xkbVariant = "";
   };
 
-  users.users.fullzer4 = {
-    isNormalUser = true;
-    description = "fullzer4";
-    extraGroups = [ "networkmanager" "wheel" ];
-    packages = with pkgs; [];
+  users = {
+    defaultUserShell = pkgs.zsh;
+    users.fullzer4 = {
+      isNormalUser = true;
+      description = "fullzer4";
+      extraGroups = [ "networkmanager" "wheel" ];
+      packages = with pkgs; [];
+    };
   };
 
   services.getty.autologinUser = "fullzer4";
@@ -67,6 +70,8 @@ in
     };
   };
 
+  programs.zsh.enable = true;
+
   # networking.firewall.allowedTCPPorts = [ ... ];
   # networking.firewall.allowedUDPPorts = [ ... ];
   networking.firewall.enable = false;
@@ -76,8 +81,9 @@ in
 
     imports = [
       ./code/git.nix
-      ./terminal/zsh.nix
       ./terminal/bash.nix
+      ./terminal/zsh.nix
+      ./terminal/kitty.nix
     ];
     
   };  
