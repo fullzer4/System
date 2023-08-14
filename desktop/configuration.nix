@@ -79,6 +79,10 @@ in
   home-manager.users.fullzer4 = { config, pkgs, ... } : {
     home.stateVersion = "23.05";
 
+    home.packages = [
+      (pkgs.nerdfonts.override { fonts = [ "FiraCode" "DroidSansMono" ]; })
+    ];
+
     imports = [
       ./code/git.nix
       ./terminal/bash.nix
