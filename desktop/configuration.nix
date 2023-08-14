@@ -85,11 +85,12 @@ in
 
     imports = [
       ./code/git.nix
+      ./code/neovim.nix
       ./terminal/bash.nix
       ./terminal/zsh.nix
       ./terminal/kitty.nix
     ];
-    
+
   };  
 
   system.stateVersion = "23.05";

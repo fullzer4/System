@@ -22,6 +22,7 @@
      oh-my-zsh
      spaceship-prompt
      vim
+     neovim
      vscode
      wget
 
