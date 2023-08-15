@@ -8,13 +8,15 @@ in
   imports = [
     ./hardware-configuration.nix
     (import "${home-manager}/nixos")
+    ./desktop/hyprland.nix
+    ./pkgs.nix
   ];
 
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  networking.hostName = "fullzer4"; 
-  #networking.wireless.enable = true; 
+  networking.hostName = "bielgigi";
+  # networking.wireless.enable = true;
 
   # networking.proxy.default = "http://user:password@proxy:port/";
   # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
@@ -44,61 +46,14 @@ in
 
   console.keyMap = "br-abnt2";
 
-  users.users.fullzer4 = {
-    isNormalUser = true;
-    description = "fullzer4";
-    extraGroups = [ "networkmanager" "wheel" ];
-    packages = with pkgs; [];
-  };
-
-  nixpkgs.config.allowUnfree = true;
-
-  environment.systemPackages = with pkgs; [
-     hyprland
-     kitty
-     wofi
-     eww
-     libnotify
-     
-     firefox
-     chromium
-     obsidian
-     discord
-
-     vim
-     wget
-
-     git
-     python312
-     nodejs_20
-     deno
-     rustc
-     rustup
-     rustfmt
-     gnat13
-     gccgo13
-     clang-tools
-     gnumake
-     cmake
-     ninja
-     gdb
-     clang-tools
-     cppcheck
-
-     docker
-     docker-compose
-     podman
-     podman-compose
-  ];
-
-  sound.enable = true;
-  security.rtkit.enable = true;
-  services.pipewire = {
-    enable = true;
-    alsa.enable = true;
-    alsa.support32Bit = true;
-    pulse.enable = true;
-    jack.enable = true;
+  users = {
+    defaultUserShell = pkgs.zsh;
+    users.fullzer4 = {
+      isNormalUser = true;
+      description = "fullzer4";
+      extraGroups = [ "networkmanager" "wheel" ];
+      packages = with pkgs; [];
+    };
   };
 
   programs.mtr.enable = true;
@@ -106,6 +61,7 @@ in
     enable = true;
     enableSSHSupport = true;
   };
+
   services.openssh = {
     enable = true;
     settings = {
@@ -113,48 +69,29 @@ in
     };
   };
 
+  programs.zsh.enable = true;
+
   # networking.firewall.allowedTCPPorts = [ ... ];
   # networking.firewall.allowedUDPPorts = [ ... ];
   networking.firewall.enable = false;
 
-  programs.hyprland = {
-    enable = true;
-    xwayland.enable = true;
-  };
-  
-  environment.sessionVariables = {
-    
-  };
-
   home-manager.users.fullzer4 = { config, pkgs, ... } : {
     home.stateVersion = "23.05";
 
-    #imports = [
-    #  "/etc/nixos/code/git.nix"
-    #];
+    home.packages = [
+      (pkgs.nerdfonts.override { fonts = [ "FiraCode" "DroidSansMono" ]; })
+    ];
 
-    home.file.".ssh/allowed_signers".text =
-    "* ${builtins.readFile /home/fullzer4/.ssh/id_rsa.pub}";
+    imports = [
+      ./code/git.nix
+      ./code/neovim.nix
+      ./terminal/bash.nix
+      ./terminal/zsh.nix
+      ./terminal/kitty.nix
+    ];
 
-    programs.bash.enable = true;
-    programs.zsh.enable = true;
-    programs.git = {
-      enable = true;
-      userName = "fullzer4";
-      userEmail = "gabrielpelizzaro@gmail.com";
-      extraConfig = {
-        commit.gpgsign = true;
-        gpg.format = "ssh";
-        gpg.ssh.allowedSignersFile = "~/.ssh/allowed_signers";
-        user.signingkey = "~/.ssh/id_rsa.pub";
-      };
-    };
-    
-    programs.bash.initExtra = ''
-      if [ "$(tty)" = "/dev/tty1" ];then
-        exec Hyprland
-      fi
-    '';
   };  
-  system.stateVersion = "23.05"; 
+
+  system.stateVersion = "23.05";
+
 }
