@@ -27,8 +27,13 @@
      wget
 
      git
-     python312
-     nodejs_20
+     python310
+     python310Packages.pip
+     python310Packages.virtualenv
+     nodejs_18
+     yarn
+     nodePackages_latest.typescript
+     nodePackages_latest.prisma
      deno
      rustc
      rustup
