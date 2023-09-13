@@ -1,6 +1,9 @@
-
-
-## Dependecies
-
-## How to secure
-
+- **WM:** [bspwm](https://github.com/baskerville/bspwm)
+- **OS:** [Arch Linux](https://archlinux.org)
+- **Terminal:** [kitty](https://github.com/kovidgoyal/kitty)
+- **Shell:** [zsh](https://wiki.archlinux.org/index.php/Zsh)
+- **Navbar:** [polybar](https://polybar.github.io/)
+- **Compositor:** [picom](https://github.com/ibhagwan/picom)
+- **Editor:** [neovim](https://github.com/neovim/neovim)
+- **File Manager:** [thunar](https://github.com/xfce-mirror/thunar)
+- **Application Launcher:** [rofi](https://github.com/davatorium/rofi)
