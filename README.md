@@ -7,3 +7,5 @@
 - **Editor:** [neovim](https://github.com/neovim/neovim)
 - **File Manager:** [thunar](https://github.com/xfce-mirror/thunar)
 - **Application Launcher:** [rofi](https://github.com/davatorium/rofi)
+- **Firewall:** [ufw](https://help.ubuntu.com/community/UFW)
+- **Ban-IPs:** [fail2ban](https://www.fail2ban.org/wiki/index.php/Main_Page)
