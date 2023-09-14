@@ -1,1 +1,2 @@
-require("lua.fullzer4.core.core")
+require("fullzer4.core")
+require("fullzer4.lazy")
